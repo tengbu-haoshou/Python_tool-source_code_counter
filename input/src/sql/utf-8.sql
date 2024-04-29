@@ -1,0 +1,1 @@
+SELECT 'あいうえお' AS STR FROM DUAL;

@@ -1,0 +1,165 @@
+.\input\src\c\ansi.c
+      1: 
+      2: 
+      3: 
+      4: 
+      5: 
+|     6: [#] [include] [<] [stdio] [.] [h] [>]
+|     7: [#] [include] [<] [stdlib] [.] [h] [>]
+      8: 
+      9: 
+|    10: [void] [main] [(] [int] [argc] [,] [char] [*] [argv] [[] []] [)] [{]
+     11: 
+     12: 
+|    13: [int] [num] [=]
+|    14: [10] [/]
+|    15: [2] [*] [2] [;]
+|    16: [char] [ch] [=] ['\"'] [;]
+     17: 
+     18: 
+|    19: [char] [*] [str] [=]
+|    20: ["\"hello "]
+|    21: ["world\"\n"] [;]
+     22: 
+     23: 
+|    24: [printf] [(] [str] [)] [;]
+     25: 
+|    26: [exit] [(] [0] [)] [;]
+     27: 
+     28: 
+|    29: [/]
+|    30: ['string]
+|    31: [']
+|    32: ["string]
+|    33: ["]
+|    34: [}]
+.\input\src\c\gb2312.c
+|     1: [#] [include] [<] [stdio] [.] [h] [>]
+|     2: [main] [(] [)] [{]
+|     3: [printf] [(] ["安以宇衣於\n"] [)] [;]
+|     4: [}]
+.\input\src\c\shift-jis.c
+|     1: [#] [include] [<] [stdio] [.] [h] [>]
+|     2: [main] [(] [)] [{]
+|     3: [printf] [(] ["あいうえお\n"] [)] [;]
+|     4: [}]
+.\input\src\c\utf-8.c
+|     1: [#] [include] [<] [stdio] [.] [h] [>]
+|     2: [main] [(] [)] [{]
+|     3: [printf] [(] ["あいうえお\n"] [)] [;]
+|     4: [}]
+.\input\src\etc\.c.c
+.\input\src\java\ansi.java
+      1: 
+      2: 
+      3: 
+      4: 
+      5: 
+|     6: [class] [HelloWorld] [{]
+      7: 
+      8: 
+|     9: [public] [static] [void] [main] [(] [String] [args] [[] []] [)] [{]
+     10: 
+     11: 
+|    12: [int] [num] [=] [10] [/] [2] [*] [2] [;]
+|    13: [char] [ch] [=] ['\"'] [;]
+     14: 
+     15: 
+|    16: [String] [str] [=]
+|    17: ["\"hello "]
+|    18: ["world\""] [;]
+     19: 
+     20: 
+|    21: [System] [.] [out] [.] [println] [(] [str] [)] [;]
+     22: 
+|    23: [return] [;]
+     24: 
+     25: 
+|    26: [/]
+|    27: ['string]
+|    28: [']
+|    29: ["string]
+|    30: ["]
+|    31: [}]
+|    32: [}]
+.\input\src\java\gb2312.java
+|     1: [class] [HelloWorld] [{]
+|     2: [public] [static] [void] [main] [(] [String] [args] [[] []] [)] [{]
+|     3: [System] [.] [out] [.] [println] [(] ["安以宇衣於"] [)] [;]
+|     4: [}]
+|     5: [}]
+.\input\src\java\shift-jis.java
+|     1: [class] [HelloWorld] [{]
+|     2: [public] [static] [void] [main] [(] [String] [args] [[] []] [)] [{]
+|     3: [System] [.] [out] [.] [println] [(] ["あいうえお"] [)] [;]
+|     4: [}]
+|     5: [}]
+.\input\src\java\utf-8.java
+|     1: [class] [HelloWorld] [{]
+|     2: [public] [static] [void] [main] [(] [String] [args] [[] []] [)] [{]
+|     3: [System] [.] [out] [.] [println] [(] ["あいうえお"] [)] [;]
+|     4: [}]
+|     5: [}]
+.\input\src\py\ansi.py
+      1: 
+      2: 
+      3: 
+      4: 
+      5: 
+      6: 
+      7: 
+|     8: [import] [sys]
+      9: 
+     10: 
+     11: 
+|    12: [def] [main] [(] [)] [:]
+     13: 
+     14: 
+|    15: [str] [=] ['\'hello world\'']
+|    16: [str] [=] ["'hello world'"]
+     17: 
+     18: 
+|    19: [print] [(] [str] [)]
+     20: 
+     21: 
+|    22: [sys] [.] [exit] [(] [0] [)]
+     23: 
+     24: 
+|    25: [if] [__name__] [=] [=] ['__main__'] [:]
+|    26: [main] [(] [)]
+     27: 
+     28: 
+|    29: ['string]
+|    30: [']
+|    31: ["string]
+     32: 
+|    33: [comment]
+     34: 
+     35: 
+     36: 
+.\input\src\py\gb2312.py
+|     1: [print] [(] ["安以宇衣於"] [)]
+.\input\src\py\shift-jis.py
+|     1: [print] [(] ["あいうえお"] [)]
+.\input\src\py\utf-8.py
+|     1: [print] [(] ["あいうえお"] [)]
+.\input\src\sql\ansi.sql
+      1: 
+      2: 
+      3: 
+      4: 
+      5: 
+|     6: [SELECT] ['''Hello world'''] [AS] ["hello_world"] [,] ["sql"] [AS] ["sql"]
+|     7: [FROM] ["hello"] [.] ["world"]
+|     8: [WHERE] ["sql"] [LIKE] ['''\%'''] [ESCAPE] ['\']
+      9: 
+     10: 
+|    11: [''']
+|    12: ['string]
+|    13: ["string]
+.\input\src\sql\gb2312.sql
+|     1: [SELECT] ['安以宇衣於'] [AS] [STR] [FROM] [DUAL] [;]
+.\input\src\sql\shift-jis.sql
+|     1: [SELECT] ['あいうえお'] [AS] [STR] [FROM] [DUAL] [;]
+.\input\src\sql\utf-8.sql
+|     1: [SELECT] ['あいうえお'] [AS] [STR] [FROM] [DUAL] [;]

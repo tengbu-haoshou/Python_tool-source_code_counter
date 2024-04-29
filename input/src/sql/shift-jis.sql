@@ -1,0 +1,1 @@
+SELECT '‚ ‚¢‚¤‚¦‚¨' AS STR FROM DUAL;

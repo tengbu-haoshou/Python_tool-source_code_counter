@@ -1,0 +1,1 @@
+SELECT 'ฐฒาิำ๎าย์ถ' AS STR FROM DUAL;
