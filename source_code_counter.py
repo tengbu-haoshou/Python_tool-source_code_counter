@@ -40,15 +40,15 @@ from openpyxl.styles.borders import Border, Side
 #
 IN_DIR = '.\\input'
 OUT_DIR = '.\\output'
-# IN_SRC_ROOT = 'D:\\Developments\\PyCharmProjects\\source_code_counter\\input'  # noqa
+# IN_SRC_ROOT = 'D:\\Developments\\PyCharmProjects\\tool-source_code_counter\\input'  # noqa
 IN_SRC_ROOT = '.\\input'
 IN_SRC_RELATIVE = '\\src'
 IN_EXCEL = IN_DIR + '\\source_code_counter_list_template.xlsx'
 OUT_EXCEL = OUT_DIR + '\\source_code_counter_list.xlsx'
-OUT_DEBUG = OUT_DIR + '\\debug.txt'
 OUT_SHEET = 'Source Code Counter List'
 ENCODINGS = ['utf-8', 'shift-jis', 'gb2312']
 IGNORE_EXTENDS = ['.dat', '.ini']
+OUT_DEBUG = OUT_DIR + '\\debug.txt'
 
 #
 # Excel Cell Position (1 Origin)
@@ -62,10 +62,8 @@ CELL_COL_LINES = 6
 CELL_COL_STEPS = 7
 
 #
-# Constants
+# Output Excel Cell Format
 #
-
-# For Excel
 ALIGN_LEFT = Alignment(horizontal='left', vertical='top', wrap_text=True)
 ALIGN_LEFT_NO_WRAP = Alignment(horizontal='left', vertical='top', wrap_text=False)
 ALIGN_CENTER = Alignment(horizontal='center', vertical='top', wrap_text=True)
@@ -238,8 +236,6 @@ class WriteExcel:
             self._sheet.cell(row=self._row_offset + self._row, column=i_col).alignment = i_align
         if i_font is not None:
             self._sheet.cell(row=self._row_offset + self._row, column=i_col).font = i_font
-            if i_font == FONT_MEIRYO_BOLD:
-                self._sheet.cell(row=self._row_offset + self._row, column=i_col).fill = FILL_BRIGHT_GRAY
         else:
             self._sheet.cell(row=self._row_offset + self._row, column=i_col).font = FONT_MEIRYO
         if i_format is not None:
