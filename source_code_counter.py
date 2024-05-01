@@ -224,8 +224,8 @@ class WriteExcel:
         self._row += 1
         return
 
-    def get_row(self) -> int:
-        return self._row
+    def get_count(self) -> int:
+        return self._row + 1
 
     def write_cell(self, i_col: int, i_value: Union[int, str],
                    i_align: int = None, i_font: Font = None, i_format: str = None) -> None:
@@ -250,9 +250,6 @@ class WriteExcel:
 
 # Scan Python File
 def scan_python_file(full_path_file: str, fp) -> (int, int, str):
-
-    if fp is not None:
-        fp.write('%s\n' % full_path_file)
 
     for enc in ENCODINGS:
 
@@ -467,9 +464,6 @@ def scan_python_file(full_path_file: str, fp) -> (int, int, str):
 
 # Scan Java File
 def scan_java_file(full_path_file: str, fp) -> (int, int, str):
-
-    if fp is not None:
-        fp.write('%s\n' % full_path_file)
 
     for enc in ENCODINGS:
 
@@ -692,9 +686,6 @@ def scan_java_file(full_path_file: str, fp) -> (int, int, str):
 
 # Scan SQL File
 def scan_sql_file(full_path_file: str, fp) -> (int, int, str):
-
-    if fp is not None:
-        fp.write('%s\n' % full_path_file)
 
     for enc in ENCODINGS:
 
@@ -943,8 +934,11 @@ def seek_directories(write_excel: WriteExcel, level: int, dir_root: str, dir_rel
 
     files.sort(key=str.lower)
     for file in files:
+        full_path_file = os.path.join(dir_root, file)
+        if fp is not None:
+            fp.write('%5d %s\n' % (write_excel.get_count(), full_path_file))
         base, ext = os.path.splitext(file)
-        write_excel.write_cell(CELL_COL_NO, write_excel.get_row(), None, None, NUMBER_FORMAT)
+        write_excel.write_cell(CELL_COL_NO, write_excel.get_count(), None, None, NUMBER_FORMAT)
         write_excel.write_cell(CELL_COL_PATH, dir_relative, ALIGN_LEFT_NO_WRAP, None, None)
         write_excel.write_cell(CELL_COL_FILE, file, ALIGN_LEFT_NO_WRAP, None, None)
         write_excel.write_cell(CELL_COL_EXT, ext, ALIGN_CENTER, None, None)
@@ -953,25 +947,27 @@ def seek_directories(write_excel: WriteExcel, level: int, dir_root: str, dir_rel
             lines = None
             steps = None
         elif ext == '.py':
-            lines, steps, msg = scan_python_file(os.path.join(dir_root, file), fp)
+            lines, steps, msg = scan_python_file(full_path_file, fp)
         elif ext in ('.java', '.c', '.cpp'):
-            lines, steps, msg = scan_java_file(os.path.join(dir_root, file), fp)
+            lines, steps, msg = scan_java_file(full_path_file, fp)
         elif ext == '.sql':
-            lines, steps, msg = scan_sql_file(os.path.join(dir_root, file), fp)
+            lines, steps, msg = scan_sql_file(full_path_file, fp)
         elif ext == '.txt':
-            lines, steps, msg = scan_text_file(os.path.join(dir_root, file))
+            lines, steps, msg = scan_text_file(full_path_file)
         # Other Files
         else:
-            lines, steps, msg = scan_text_file(os.path.join(dir_root, file))
+            lines, steps, msg = scan_text_file(full_path_file)
         write_excel.write_cell(CELL_COL_LINES, lines, None, None, NUMBER_FORMAT)
         write_excel.write_cell(CELL_COL_STEPS, steps, None, None, NUMBER_FORMAT)
-        print('%s %s %s %s %s' % (dir_relative, file, ext,
-                                  lines if lines is not None else '-', steps if steps is not None else '-'))
+        print('%5d %s %s %s %s %s' %
+              (write_excel.get_count(), dir_relative, file, ext,
+               lines if lines is not None else '-', steps if steps is not None else '-'))
         write_excel.next_row()
 
     dirs.sort(key=str.lower)
     for dir_nest in dirs:
-        seek_directories(write_excel, level + 1, os.path.join(dir_root, dir_nest), os.path.join(dir_relative, dir_nest), fp)
+        seek_directories(write_excel, level + 1,
+                         os.path.join(dir_root, dir_nest), os.path.join(dir_relative, dir_nest), fp)
 
     return
 

@@ -1,4 +1,8 @@
-.\input\src\c\ansi.c
+    1 .\input\src\ansi.txt
+    2 .\input\src\gb2312.txt
+    3 .\input\src\shift-jis.txt
+    4 .\input\src\utf-8.txt
+    5 .\input\src\c\ansi.c
       1: 
       2: 
       3: 
@@ -33,23 +37,28 @@
 |    32: ["string]
 |    33: ["]
 |    34: [}]
-.\input\src\c\gb2312.c
+    6 .\input\src\c\gb2312.c
 |     1: [#] [include] [<] [stdio] [.] [h] [>]
 |     2: [main] [(] [)] [{]
 |     3: [printf] [(] ["安以宇衣於\n"] [)] [;]
 |     4: [}]
-.\input\src\c\shift-jis.c
+    7 .\input\src\c\shift-jis.c
 |     1: [#] [include] [<] [stdio] [.] [h] [>]
 |     2: [main] [(] [)] [{]
 |     3: [printf] [(] ["あいうえお\n"] [)] [;]
 |     4: [}]
-.\input\src\c\utf-8.c
+    8 .\input\src\c\utf-8.c
 |     1: [#] [include] [<] [stdio] [.] [h] [>]
 |     2: [main] [(] [)] [{]
 |     3: [printf] [(] ["あいうえお\n"] [)] [;]
 |     4: [}]
-.\input\src\etc\.c.c
-.\input\src\java\ansi.java
+    9 .\input\src\etc\.c.c
+   10 .\input\src\etc\.ignore
+   11 .\input\src\etc\etc.dat
+   12 .\input\src\etc\etc.ini
+   13 .\input\src\img\black.ico
+   14 .\input\src\img\whilte.ico
+   15 .\input\src\java\ansi.java
       1: 
       2: 
       3: 
@@ -82,25 +91,25 @@
 |    30: ["]
 |    31: [}]
 |    32: [}]
-.\input\src\java\gb2312.java
+   16 .\input\src\java\gb2312.java
 |     1: [class] [HelloWorld] [{]
 |     2: [public] [static] [void] [main] [(] [String] [args] [[] []] [)] [{]
 |     3: [System] [.] [out] [.] [println] [(] ["安以宇衣於"] [)] [;]
 |     4: [}]
 |     5: [}]
-.\input\src\java\shift-jis.java
+   17 .\input\src\java\shift-jis.java
 |     1: [class] [HelloWorld] [{]
 |     2: [public] [static] [void] [main] [(] [String] [args] [[] []] [)] [{]
 |     3: [System] [.] [out] [.] [println] [(] ["あいうえお"] [)] [;]
 |     4: [}]
 |     5: [}]
-.\input\src\java\utf-8.java
+   18 .\input\src\java\utf-8.java
 |     1: [class] [HelloWorld] [{]
 |     2: [public] [static] [void] [main] [(] [String] [args] [[] []] [)] [{]
 |     3: [System] [.] [out] [.] [println] [(] ["あいうえお"] [)] [;]
 |     4: [}]
 |     5: [}]
-.\input\src\py\ansi.py
+   19 .\input\src\py\ansi.py
       1: 
       2: 
       3: 
@@ -137,13 +146,13 @@
      34: 
      35: 
      36: 
-.\input\src\py\gb2312.py
+   20 .\input\src\py\gb2312.py
 |     1: [print] [(] ["安以宇衣於"] [)]
-.\input\src\py\shift-jis.py
+   21 .\input\src\py\shift-jis.py
 |     1: [print] [(] ["あいうえお"] [)]
-.\input\src\py\utf-8.py
+   22 .\input\src\py\utf-8.py
 |     1: [print] [(] ["あいうえお"] [)]
-.\input\src\sql\ansi.sql
+   23 .\input\src\sql\ansi.sql
       1: 
       2: 
       3: 
@@ -157,9 +166,9 @@
 |    11: [''']
 |    12: ['string]
 |    13: ["string]
-.\input\src\sql\gb2312.sql
+   24 .\input\src\sql\gb2312.sql
 |     1: [SELECT] ['安以宇衣於'] [AS] [STR] [FROM] [DUAL] [;]
-.\input\src\sql\shift-jis.sql
+   25 .\input\src\sql\shift-jis.sql
 |     1: [SELECT] ['あいうえお'] [AS] [STR] [FROM] [DUAL] [;]
-.\input\src\sql\utf-8.sql
+   26 .\input\src\sql\utf-8.sql
 |     1: [SELECT] ['あいうえお'] [AS] [STR] [FROM] [DUAL] [;]
