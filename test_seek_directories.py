@@ -16,7 +16,7 @@ import glob
 from pathlib import Path
 
 
-# os.walk
+# os.walk()
 def os_walk() -> None:
     file_list = []
     for root, dirs, files in os.walk('.\\input\\src'):
@@ -47,7 +47,7 @@ def path_glob() -> None:
     return
 
 
-# Seek Directories
+# os.listdir()
 def seek_directories(level: int, dir_root: str, dir_relative: str) -> None:
     dirs = []
     files = []
