@@ -4,7 +4,7 @@
 # test_seek_directories.py
 #
 # Date    : 2024-05-21
-# Auther  : Hirotoshi FUJIBE
+# Author  : Hirotoshi FUJIBE
 # History :
 #
 # Copyright (c) 2024 Hirotoshi FUJIBE
