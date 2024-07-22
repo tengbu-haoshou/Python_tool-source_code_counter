@@ -4,7 +4,7 @@
 # source_code_counter.py
 #
 # Date    : 2024-04-24
-# Auther  : Hirotoshi FUJIBE
+# Author  : Hirotoshi FUJIBE
 # History :
 #
 # Copyright (c) 2024 Hirotoshi FUJIBE
@@ -220,7 +220,7 @@ class WriteExcel:
         return self._row + 1
 
     def write_cell(self, i_col: int, i_value: Union[int, str],
-                   i_align: int = None, i_font: Font = None, i_format: str = None) -> None:
+                   i_align: Alignment = None, i_font: Font = None, i_format: str = None) -> None:
         self._sheet.cell(row=self._row_offset + self._row, column=i_col).border = BORDER_ALL
         if i_value is not None:
             self._sheet.cell(row=self._row_offset + self._row, column=i_col).value = i_value
