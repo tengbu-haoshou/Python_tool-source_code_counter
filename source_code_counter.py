@@ -48,12 +48,13 @@ OUT_DEBUG = OUT_DIR + '\\debug.txt'
 
 # Excel Cell Position (1 Origin)
 CELL_ROW_OFFSET = 4
-CELL_COL_NO = 2
-CELL_COL_PATH = 3
-CELL_COL_FILE = 4
-CELL_COL_EXT = 5
-CELL_COL_LINES = 6
-CELL_COL_STEPS = 7
+CELL_COL_OFFSET = 2
+CELL_COL_NO = 0
+CELL_COL_PATH = 1
+CELL_COL_FILE = 2
+CELL_COL_EXT = 3
+CELL_COL_LINES = 4
+CELL_COL_STEPS = 5
 
 # Output Excel Cell Format
 ALIGN_LEFT = Alignment(horizontal='left', vertical='top', wrap_text=True)
@@ -208,6 +209,7 @@ class WriteExcel:
         self._wb = openpyxl.load_workbook(out_excel)
         self._sheet = self._wb[out_sheet]
         self._row_offset = CELL_ROW_OFFSET
+        self._col_offset = CELL_COL_OFFSET
         self._row = 0
         self._out_excel = out_excel
         return
@@ -221,17 +223,17 @@ class WriteExcel:
 
     def write_cell(self, i_col: int, i_value: Union[int, str],
                    i_align: Alignment = None, i_font: Font = None, i_format: str = None) -> None:
-        self._sheet.cell(row=self._row_offset + self._row, column=i_col).border = BORDER_ALL
+        self._sheet.cell(row=self._row_offset + self._row, column=self._col_offset + i_col).border = BORDER_ALL
         if i_value is not None:
-            self._sheet.cell(row=self._row_offset + self._row, column=i_col).value = i_value
+            self._sheet.cell(row=self._row_offset + self._row, column=self._col_offset + i_col).value = i_value
         if i_align is not None:
-            self._sheet.cell(row=self._row_offset + self._row, column=i_col).alignment = i_align
+            self._sheet.cell(row=self._row_offset + self._row, column=self._col_offset + i_col).alignment = i_align
         if i_font is not None:
-            self._sheet.cell(row=self._row_offset + self._row, column=i_col).font = i_font
+            self._sheet.cell(row=self._row_offset + self._row, column=self._col_offset + i_col).font = i_font
         else:
-            self._sheet.cell(row=self._row_offset + self._row, column=i_col).font = FONT_MEIRYO
+            self._sheet.cell(row=self._row_offset + self._row, column=self._col_offset + i_col).font = FONT_MEIRYO
         if i_format is not None:
-            self._sheet.cell(row=self._row_offset + self._row, column=i_col).number_format = i_format
+            self._sheet.cell(row=self._row_offset + self._row, column=self._col_offset + i_col).number_format = i_format
         return
 
     def close(self) -> None:
